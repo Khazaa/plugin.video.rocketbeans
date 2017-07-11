@@ -1,7 +1,7 @@
 import datetime
 import json
 import time
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from resources.data import config
 
@@ -9,8 +9,8 @@ from resources.data import config
 def show_guide():
     items = []
 
-    request = urllib2.Request(config.GUIDE_URL, headers={'User-Agent': 'Kodi'})
-    response = urllib2.urlopen(request)
+    request = urllib.request.Request(config.GUIDE_URL, headers={'User-Agent': 'Kodi'})
+    response = urllib.request.urlopen(request)
     string_data = response.read()
 
     data = json.loads(string_data)

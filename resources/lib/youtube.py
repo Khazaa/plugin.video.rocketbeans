@@ -1,12 +1,12 @@
 import re
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 import xbmc
 
 
 def get_live_video_id_from_channel_id(channel_id):
-    request = urllib2.Request("https://www.youtube.com/c/%s/live" % channel_id)
-    response = urllib2.urlopen(request)
+    request = urllib.request.Request("https://www.youtube.com/c/%s/live" % channel_id)
+    response = urllib.request.urlopen(request)
     string_data = response.read()
     lines = string_data.splitlines()
 

@@ -2,8 +2,8 @@
 
 import routing
 import sys
-import urllib
-import urlparse
+import urllib.request, urllib.parse, urllib.error
+import urllib.parse
 
 from resources.data import config
 from resources.lib.guide import show_guide
